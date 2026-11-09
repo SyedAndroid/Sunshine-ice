@@ -177,6 +177,10 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
 .tbl td{padding:14px 16px;border-bottom:1px dashed #DCEBF3;color:#33475A;vertical-align:top}
 .tbl tr:last-child td{border-bottom:none}
 .tbl td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.callout{margin-top:24px;max-width:44rem;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--navy);border-left:5px solid var(--sun);border-radius:8px;padding:22px 26px}
+.callout .big{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;text-transform:uppercase;color:var(--sun);white-space:nowrap}
+.prose .callout p{margin-top:0;color:var(--ice);font-size:.98rem}
+.ind.feature b{color:var(--white)}
 .related{background:var(--white)}
 a.card{text-decoration:none}
 a.card:hover{border-color:var(--ice-deep)}
@@ -206,6 +210,7 @@ a.card:hover{border-color:var(--ice-deep)}
   .menu-toggle{display:block}
 }
 @media (max-width:560px){
+  .callout{grid-template-columns:1fr;gap:10px}
   .tbl{min-width:0}
   .tbl thead{display:none}
   .tbl tr{display:block;padding:14px 16px;border-bottom:1px dashed #DCEBF3}
