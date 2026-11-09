@@ -31,185 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  color-scheme: only light;
-  --navy:#081D30;
-  --steel:#10314D;
-  --ice:#BFE6F5;
-  --ice-deep:#5FB6DC;
-  --frost:#F3FAFD;
-  --white:#FFFFFF;
-  --sun:#FFA51F;
-  --sun-deep:#E8850A;
-  --text:#16232E;
-  --muted:#425A6A;
-  --display:'Anton',sans-serif;
-  --body:'Archivo',sans-serif;
-  --mono:'IBM Plex Mono',monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--frost)}
-body{font-family:var(--body);color:var(--text);background:var(--frost);line-height:1.6}
-section{background:var(--frost)}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(191,230,245,.15)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand-name{font-family:var(--display);font-size:1.25rem;letter-spacing:.06em;color:var(--white);line-height:1}
-.brand-name span{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.34em;color:var(--ice-deep);margin-top:4px;font-weight:400}
-.brand svg{flex:none}
-.brand-name i{font-style:normal}
-.lbl-short{display:none}
-nav.links{display:flex;gap:28px}
-nav.links a{color:var(--ice);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.02em}
-nav.links a:hover,nav.links a:focus-visible{color:var(--sun)}
-.call-btn{background:var(--sun);color:var(--navy);text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 20px;border-radius:4px;letter-spacing:.02em;white-space:nowrap}
-.call-btn:hover{background:var(--sun-deep)}
-.menu-toggle{display:none;background:none;border:1px solid rgba(191,230,245,.3);border-radius:4px;color:var(--ice);font-size:1.3rem;line-height:1;padding:6px 12px;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-
-/* ---------- hero ---------- */
-.hero{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:88px}
-.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sun);margin-bottom:20px}
-h1{font-family:var(--display);font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:.01em;text-transform:uppercase;font-weight:400}
-h1 em{font-style:normal;color:var(--ice-deep)}
-.hero p.lede{margin-top:22px;font-size:1.08rem;color:var(--ice);max-width:34rem}
-.hero-ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-.btn-ghost{border:1px solid rgba(191,230,245,.4);color:var(--ice);text-decoration:none;font-weight:600;font-size:.9rem;padding:11px 20px;border-radius:4px}
-.btn-ghost:hover{border-color:var(--ice);color:var(--white)}
-.hero-art{position:relative}
-@media (prefers-reduced-motion:no-preference){
-  .glint{animation:glint 5s ease-in-out infinite}
-  @keyframes glint{0%,100%{opacity:.15}50%{opacity:.7}}
-}
-
-/* ---------- spec strip ---------- */
-.spec-strip{background:var(--steel);border-top:1px solid rgba(191,230,245,.15)}
-.spec-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.spec{padding:22px 18px;border-left:1px solid rgba(191,230,245,.15)}
-.spec:first-child{border-left:none}
-.spec b{display:block;font-family:var(--mono);font-size:1.35rem;font-weight:500;color:var(--white)}
-.spec span{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice-deep)}
-
-/* ---------- shared section styling ---------- */
-section{padding:88px 0}
-.kicker{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--steel);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.kicker::before{content:"";width:26px;height:4px;background:var(--sun);flex:none}
-h2{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,2.8rem);text-transform:uppercase;line-height:1.1;font-weight:400;color:#04101C}
-.section-intro{max-width:44rem;margin-top:16px;color:#33475A;font-size:1.05rem}
-
-/* ---------- products ---------- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.card{background:var(--white);border:1px solid #DCEBF3;border-radius:8px;padding:28px;display:flex;flex-direction:column}
-.card .tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice-deep);margin-bottom:14px}
-.card h3{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;font-weight:400;color:var(--navy);letter-spacing:.02em}
-.card p{margin-top:10px;color:var(--muted);font-size:.95rem;flex:1}
-.card .meta{margin-top:18px;padding-top:16px;border-top:1px dashed #CFE3EE;font-family:var(--mono);font-size:.78rem;color:var(--steel)}
-
-/* ---------- industries ---------- */
-.industries{background:var(--navy);color:var(--white)}
-.industries h2{color:var(--white)}
-.ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
-.ind{border:1px solid rgba(191,230,245,.2);border-radius:8px;padding:26px 28px;background:rgba(191,230,245,.04)}
-.ind h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.15rem;letter-spacing:.03em;color:var(--ice)}
-.ind h3 .num{font-family:var(--mono);color:var(--sun);font-size:.8rem;margin-right:10px}
-.ind p{margin-top:10px;color:#9FC4D8;font-size:.95rem}
-.ind.feature{grid-column:1/-1;background:rgba(255,165,31,.07);border-color:rgba(255,165,31,.4)}
-
-/* ---------- process ---------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;counter-reset:step}
-.step{background:var(--white);border:1px solid #DCEBF3;border-radius:8px;padding:24px}
-.step::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:var(--mono);color:var(--sun-deep);font-size:.8rem;letter-spacing:.15em}
-.step h3{font-family:var(--body);font-weight:700;font-size:1rem;margin-top:10px;color:var(--navy)}
-.step p{margin-top:8px;font-size:.88rem;color:var(--muted)}
-
-/* ---------- plant photos ---------- */
-.plant-label{margin-top:56px;font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--steel)}
-.plant{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
-.plant figure{background:var(--white);border:1px solid #DCEBF3;border-radius:8px;overflow:hidden}
-.plant img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:#DCEBF3}
-.plant figcaption{padding:14px 18px;font-size:.88rem;color:var(--muted)}
-.plant figcaption b{display:block;font-weight:700;font-size:.95rem;color:var(--navy)}
-.plant-ext{margin-top:30px;max-width:508px;border:1px solid rgba(191,230,245,.2);border-radius:8px;overflow:hidden;background:var(--navy)}
-.plant-ext img{width:100%;height:auto}
-.plant-ext figcaption{padding:12px 16px;font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ice-deep)}
-
-/* ---------- reviews ---------- */
-.reviews{background:var(--white)}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.review{background:var(--frost);border:1px solid #DCEBF3;border-radius:8px;padding:28px;display:flex;flex-direction:column}
-.stars{color:var(--sun-deep);letter-spacing:3px;font-size:.95rem}
-.review blockquote{margin-top:14px;font-size:.98rem;color:var(--text);flex:1}
-.review .who{margin-top:18px;padding-top:16px;border-top:1px dashed #CFE3EE}
-.review .who b{display:block;font-size:.92rem;color:var(--navy)}
-.review .who span{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.05em}
-
-/* ---------- faq ---------- */
-.faq-list{margin-top:40px;max-width:52rem}
-.faq-list details{background:var(--white);border:1px solid #DCEBF3;border-radius:8px;margin-bottom:12px}
-.faq-list summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-weight:700;color:#04101C;font-size:1rem}
-.faq-list summary::after{content:"+";font-family:var(--mono);color:var(--sun-deep);font-size:1.2rem;flex:none}
-.faq-list details[open] summary::after{content:"−"}
-.faq-list summary::-webkit-details-marker{display:none}
-.faq-list details p{padding:0 22px 18px;color:#33475A;font-size:.95rem}
-
-/* ---------- contact ---------- */
-.contact{background:var(--steel);color:var(--white)}
-.contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.contact h2{color:var(--white)}
-.contact p{color:var(--ice)}
-.contact-card{background:var(--navy);border:1px solid rgba(191,230,245,.2);border-radius:8px;padding:32px}
-.contact-line{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed rgba(191,230,245,.2);font-size:.95rem}
-.contact-line:last-of-type{border-bottom:none}
-.contact-line span{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ice-deep);padding-top:3px;white-space:nowrap}
-.contact-line b{font-weight:600;text-align:right;color:var(--white)}
-.contact-card .call-btn{display:block;text-align:center;margin-top:22px}
-
-/* ---------- footer ---------- */
-footer{background:var(--navy);color:#7FA6BC;padding:34px 0;border-top:1px solid rgba(191,230,245,.15)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
-
-/* ---------- responsive ---------- */
-@media (max-width:900px){
-  .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:60px}
-  .hero-art{max-width:420px;margin:0 auto}
-  .spec-strip .wrap{grid-template-columns:repeat(2,1fr)}
-  .spec:nth-child(3){border-left:none}
-  .spec{border-top:1px solid rgba(191,230,245,.15)}
-  .spec:nth-child(-n+2){border-top:none}
-  .cards,.review-grid{grid-template-columns:1fr}
-  .plant{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(72%,340px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch}
-  .plant figure{scroll-snap-align:start}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .ind-grid{grid-template-columns:1fr}
-  .contact .wrap{grid-template-columns:1fr}
-  nav.links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(191,230,245,.15)}
-  nav.links.open{display:flex}
-  nav.links a{padding:12px 0;border-bottom:1px solid rgba(191,230,245,.08)}
-  .menu-toggle{display:block}
-}
-@media (max-width:560px){
-  .brand{gap:8px}
-  .brand svg{width:36px;height:36px}
-  .brand-name{font-size:1.1rem;white-space:nowrap}
-  .brand-name i{display:none}
-  .lbl-long{display:none}
-  .lbl-short{display:inline}
-  header .call-btn{padding:10px 14px}
-  .steps{grid-template-columns:1fr}
-  section{padding:64px 0}
-}
-@media (max-width:350px){
-  .brand svg{display:none}
-}
-</style>
+<link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -312,8 +134,8 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Industrial ice manufacturing · Bengaluru &amp; Mysuru</p>
-      <h1>Block ice at <em>industrial scale.</em> Frozen daily, delivered cold.</h1>
+      <h1 class="eyebrow">Ice block manufacturer in Bengaluru</h1>
+      <p class="hero-title">Block ice at <em>industrial scale.</em> Frozen daily, delivered cold.</p>
       <p class="lede">Sunshine Ice Industries is an ice block manufacturer in Bengaluru (Bangalore), supplying
         ice slabs and crushed ice to Bengaluru Metro projects, the construction industry, chemical
         plants, food processing and fisheries — from factories in Bengaluru and Mysuru, with
@@ -399,6 +221,7 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
         <p>Our workhorse block for concrete cooling and bulk cold storage. Dense and slow-melting —
           supplied whole, exactly as construction sites use it.</p>
         <p class="meta">110 kg · full slab<br>Min. order: 10 blocks</p>
+        <a class="more" href="/110-kg-ice-slab-bangalore/">110 kg ice slab details</a>
       </div>
       <div class="card">
         <p class="tag">Half slab</p>
@@ -406,6 +229,7 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
         <p>Easier to handle by two workers — ideal for fisheries, markets, events and smaller
           jobs where a full slab is too much.</p>
         <p class="meta">55 kg · half slab<br>Min. order: 20 blocks</p>
+        <a class="more" href="/110-kg-ice-slab-bangalore/">Compare block sizes</a>
       </div>
       <div class="card">
         <p class="tag">Ready to use</p>
@@ -413,6 +237,7 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
         <p>Slabs crushed on demand and delivered in insulated loads — for fisheries, fresh produce
           and processing lines that need ice packed over the product.</p>
         <p class="meta">Supplied by the tonne<br>Crushed at dispatch for minimum melt</p>
+        <a class="more" href="/crushed-ice-supplier-bangalore/">Crushed ice supply in Bangalore</a>
       </div>
     </div>
   </div>
@@ -435,6 +260,7 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
         <h3><span class="num">01</span>Construction &amp; ready-mix concrete</h3>
         <p>Temperature-controlled concrete for high-rise rafts, flyovers and industrial
           foundations. Consistent block density means predictable cooling per tonne.</p>
+        <a class="more" href="/ice-for-concrete-cooling-bangalore/">Ice for concrete cooling in Bangalore</a>
       </div>
       <div class="ind">
         <h3><span class="num">02</span>Fruits &amp; vegetable processing</h3>
@@ -605,6 +431,12 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
+    <nav class="foot-links" aria-label="More pages">
+      <a href="/">Home</a>
+      <a href="/ice-for-concrete-cooling-bangalore/">Ice for concrete cooling</a>
+      <a href="/crushed-ice-supplier-bangalore/">Crushed ice supplier</a>
+      <a href="/110-kg-ice-slab-bangalore/">110 kg ice slabs</a>
+    </nav>
     <small>© 2026 Sunshine Ice Industries · Ice slab &amp; crushed ice manufacturer, Bengaluru (Bangalore) &amp; Mysuru</small>
     <small>GSTIN: 29ABHFS1511Q1ZQ</small>
   </div>
