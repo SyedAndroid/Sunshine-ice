@@ -180,7 +180,13 @@ footer small{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
 .callout{margin-top:24px;max-width:44rem;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--navy);border-left:5px solid var(--sun);border-radius:8px;padding:22px 26px}
 .callout .big{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;text-transform:uppercase;color:var(--sun);white-space:nowrap}
 .prose .callout p{margin-top:0;color:var(--ice);font-size:.98rem}
-.ind.feature b{color:var(--white)}
+.callout.wide{max-width:none;margin-top:36px;gap:28px;background:rgba(255,165,31,.09);border:1px solid rgba(255,165,31,.4);border-left:5px solid var(--sun);padding:26px 30px}
+.callout.wide p{color:var(--ice);font-size:1.05rem;max-width:46rem}
+.callout.wide p b{color:var(--white)}
+.callout.wide .more{display:inline-block;margin-top:12px;font-weight:700;font-size:.9rem;text-decoration:none;color:var(--sun)}
+.callout.wide .more::after{content:" \2192"}
+.callout.wide .more:hover{text-decoration:underline}
+.callout.wide+.ind-grid{margin-top:26px}
 .related{background:var(--white)}
 a.card{text-decoration:none}
 a.card:hover{border-color:var(--ice-deep)}
@@ -210,7 +216,9 @@ a.card:hover{border-color:var(--ice-deep)}
   .menu-toggle{display:block}
 }
 @media (max-width:560px){
-  .callout{grid-template-columns:1fr;gap:10px}
+  .callout,.callout.wide{grid-template-columns:1fr;gap:10px}
+  .callout.wide{padding:22px}
+  .callout .big{white-space:normal}
   .tbl{min-width:0}
   .tbl thead{display:none}
   .tbl tr{display:block;padding:14px 16px;border-bottom:1px dashed #DCEBF3}
